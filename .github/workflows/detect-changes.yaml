@@ -30,7 +30,5 @@ jobs:
       - name: Yarn
         run: yarn install
       - name: Run
-        run: |
-          cd workers/detect-changes/
-          yarn start
-
+        working-directory: ./workers/detect-changes
+        run: yarn start
