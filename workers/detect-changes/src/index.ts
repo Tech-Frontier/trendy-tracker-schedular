@@ -1,1 +1,1 @@
-console.log('📦 detect-changes is executed.')
+console.log('📦 detect-changes is executed.');
