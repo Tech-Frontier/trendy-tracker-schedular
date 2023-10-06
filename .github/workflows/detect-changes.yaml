@@ -18,6 +18,9 @@ name: Detect Changes
 # ```
 
 on:
+  workflow_dispatch:
+  push:
+  pull_request:
   schedule:
     # 5분 마다 실행
     - cron: '*/5 * * * *'
@@ -27,6 +30,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Puppeteer
+        run: sudo apt-get install -y chromium-browser
       - name: Yarn
         run: yarn install
       - name: Run
