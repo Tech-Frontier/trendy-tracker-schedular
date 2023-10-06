@@ -23,10 +23,12 @@ on:
     - cron: '*/5 * * * *'
 
 jobs:
-  detect_changes:
+  puppeteer_example:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Puppeteer
+        run: sudo apt-get install -y chromium-browser
       - name: Yarn
         run: yarn install
       - name: Run
