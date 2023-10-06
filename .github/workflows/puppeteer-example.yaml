@@ -18,6 +18,8 @@ name: Puppeteer Example
 # ```
 
 on:
+  push:
+  pull_request:
   schedule:
     # 5분 마다 실행
     - cron: '*/5 * * * *'
