@@ -35,7 +35,10 @@ export async function scrapRecruitList(options: ScrapRecruitListOptions) {
   for (let i = 0; i < list.length; i++) {
     const item = list[i];
     const path = load(item)(linkSelector).attr(linkAttr);
-    result.push([origin, path].join(''));
+
+    if (path != null) {
+      result.push([origin, path].join(''));
+    }
   }
 
   return result;
