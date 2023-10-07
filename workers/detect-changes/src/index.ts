@@ -6,12 +6,12 @@ import metadata from './metadata';
 import { TTAPI } from './ttapi';
 
 (async () => {
-  for(const { id, company, occupation, name, url, itemSelector, listSelector, hashSelector } of metadata) {
+  for(const { id, company, occupation, name, url, itemSelector, listSelector, hashSelector, waitSelector } of (metadata as any)) {
     const recruitList = await TTAPI.fetchRecruitListByCompany({ company });
 
     console.log(`[${name}] 분석 시작`);
 
-    const { prevRecruitList, addedList, persistentList, removedList } = await JOBS.findRecruitListAndCompare({ id, itemSelector, listSelector, url });
+    const { prevRecruitList, addedList, persistentList, removedList } = await JOBS.findRecruitListAndCompare({ id, itemSelector, listSelector, url, waitSelector });
 
     console.log(`추가된 공고 (총 ${addedList.length})`);
     for (const addedRecruitUrl of addedList) {
