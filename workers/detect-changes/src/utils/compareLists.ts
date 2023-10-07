@@ -9,7 +9,7 @@ export function compareLists(prevList: string[], currentList: string[]) {
   const persistentList = currentList.filter((item) => prevList.includes(item));
 
   return {
-    addedList: addedList.slice(0, 2),
+    addedList,
     removedList,
     persistentList,
   };
