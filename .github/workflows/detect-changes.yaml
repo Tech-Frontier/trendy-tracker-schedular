@@ -19,8 +19,6 @@ name: Detect Changes
 
 on:
   workflow_dispatch:
-  push:
-  pull_request:
   schedule:
     # 5분 마다 실행
     - cron: '*/30 * * * *'
