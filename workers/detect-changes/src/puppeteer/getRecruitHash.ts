@@ -7,6 +7,8 @@ export async function getRecruitHash(url: string, hashSelector = 'html') {
 
   await page.goto(url);
 
+  await page.waitForSelector(hashSelector);
+
   const html = await page.$eval(hashSelector, el => el.outerHTML);
 
   const hash = crypto.createHash('md5').update(html).digest('hex');
