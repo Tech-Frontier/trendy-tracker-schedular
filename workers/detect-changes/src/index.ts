@@ -28,6 +28,8 @@ import { TTAPI } from './ttapi';
 
       if (prevHash !== currentHash) {
         console.log(`- ${persistentRecruitUrl} [변경됨] (${prevHash} => ${currentHash})`);
+      } else {
+        console.log(`- ${persistentRecruitUrl}`);
       }
     }
 
