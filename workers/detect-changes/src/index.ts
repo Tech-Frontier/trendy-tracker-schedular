@@ -1,3 +1,6 @@
+import dotenv from 'dotenv';
+dotenv.config();
+
 import { scrapRecruitList } from './job';
 import metadata from './metadata';
 

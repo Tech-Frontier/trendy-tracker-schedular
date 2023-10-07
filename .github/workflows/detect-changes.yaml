@@ -23,7 +23,7 @@ on:
   pull_request:
   schedule:
     # 5분 마다 실행
-    - cron: '*/5 * * * *'
+    - cron: '*/30 * * * *'
 
 jobs:
   detect_changes:
@@ -37,3 +37,6 @@ jobs:
       - name: Run
         working-directory: ./workers/detect-changes
         run: yarn start
+        env:
+          CRECO_STORAGE_PAT: ${{ secrets.CRECO_STORAGE_PAT }}
+          TTAPI_TOKEN: ${{ secrets.TTAPI_TOKEN }}
