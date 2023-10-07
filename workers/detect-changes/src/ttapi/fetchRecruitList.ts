@@ -3,7 +3,7 @@ dotenv.config();
 
 import { ttapi } from './client';
 
-interface Recruit {
+export interface Recruit {
   id: number,
   company: string;
   occupation: string;
@@ -15,7 +15,6 @@ interface Recruit {
 
 export async function fetchRecruitListByCompany({ company }: { company: string }): Promise<Recruit[]> {
   try {
-
     const { data } = await ttapi.get(`/api/recruit/list?company=${company}&pageNo=1&pageSize=500`);
 
     return data.data.recruitList;

@@ -5,7 +5,7 @@ interface GetRecruitListOptions {
   id: string;
 }
 
-interface RecruitInfo {
+export interface RecruitInfo {
   url: string;
   status: 'active' | 'deactive'
   hash: string;
