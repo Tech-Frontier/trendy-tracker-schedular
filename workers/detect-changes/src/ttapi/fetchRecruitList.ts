@@ -6,7 +6,7 @@ import { ttapi } from './client';
 export interface Recruit {
   id: number,
   company: string;
-  occupation: string;
+  jobCategory: string;
   url: string;
   title: string;
   createdTime: string;

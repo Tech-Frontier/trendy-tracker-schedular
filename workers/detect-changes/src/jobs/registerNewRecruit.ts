@@ -7,10 +7,10 @@ interface Options {
   id: string;
   hashSelector: string;
   company: string;
-  occupation: string;
+  jobCategory: string;
 }
 
-export async function registerNewRecruit({ addedRecruitUrl, company, hashSelector, id, occupation }: Options) {
+export async function registerNewRecruit({ addedRecruitUrl, company, hashSelector, id, jobCategory }: Options) {
   await STORAGE.addRecruit({
     id,
     url: addedRecruitUrl,
@@ -21,7 +21,7 @@ export async function registerNewRecruit({ addedRecruitUrl, company, hashSelecto
   // TODO: 등록 API
   const msg = await TTAPI.registerRecruit({
     company,
-    occupation,
+    jobCategory,
     url: addedRecruitUrl,
   });
 

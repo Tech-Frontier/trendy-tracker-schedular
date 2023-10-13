@@ -2,7 +2,7 @@ export default [
   {
     "id": "daangn-backend",
     "company": "daangn",
-    "occupation": "backend",
+    "jobCategory": "backend",
     "name": "당근 서버 개발자",
     "url": "https://about.daangn.com/jobs/software-engineer-backend",
     // NOTE: 공고 목록 dom
@@ -15,7 +15,7 @@ export default [
   {
     "id": "daangn-frontend",
     "company": "daangn",
-    "occupation": "frontend",
+    "jobCategory": "frontend",
     "name": "당근 프론트엔드 개발자",
     "url": "https://about.daangn.com/jobs/software-engineer-frontend",
     // NOTE: 공고 목록 dom

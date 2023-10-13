@@ -2,7 +2,7 @@ export default [
   {
     "id": "baemin-backend",
     "company": "woowahan",
-    "occupation": "backend",
+    "jobCategory": "backend",
     "name": "배민 서버 개발자",
     "url": "https://career.woowahan.com/?jobCodes=BA007001&category=jobGroupCodes%3ABA005001#recruit-list",
     // NOTE: 공고 목록 dom
@@ -16,7 +16,7 @@ export default [
   {
     "id": "baemin-frontend",
     "company": "woowahan",
-    "occupation": "frontend",
+    "jobCategory": "frontend",
     "name": "배민 프론트엔드 개발자",
     "url": "https://career.woowahan.com/?jobCodes=BA007002&category=jobGroupCodes%3ABA005001#recruit-list",
     // NOTE: 공고 목록 dom

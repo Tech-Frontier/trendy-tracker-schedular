@@ -6,7 +6,7 @@ import metadata from './metadata';
 import { TTAPI } from './ttapi';
 
 (async () => {
-  for(const { id, company, occupation, name, url, itemSelector, listSelector, hashSelector, waitSelector } of (metadata as any)) {
+  for(const { id, company, jobCategory, name, url, itemSelector, listSelector, hashSelector, waitSelector } of (metadata as any)) {
     const recruitList = await TTAPI.fetchRecruitListByCompany({ company });
 
     console.log(`[${name}] 분석 시작`);
@@ -15,7 +15,7 @@ import { TTAPI } from './ttapi';
 
     console.log(`추가된 공고 (총 ${addedList.length})`);
     for (const addedRecruitUrl of addedList) {
-      const options = { addedRecruitUrl, company, hashSelector, id, occupation };
+      const options = { addedRecruitUrl, company, hashSelector, id, jobCategory };
       const { msg } = await JOBS.registerNewRecruit(options);
 
       console.log(`- ${addedRecruitUrl} [${msg}]`);

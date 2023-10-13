@@ -12,7 +12,7 @@ import metadata from './metadata-test';
 
     console.log(`추가된 공고 (총 ${addedList.length})`);
     for (const addedRecruitUrl of addedList) {
-      // const options = { addedRecruitUrl, company, hashSelector, id, occupation };
+      // const options = { addedRecruitUrl, company, hashSelector, id, jobCategory };
       // const { msg } = await JOBS.registerNewRecruit(options);
 
       console.log(`- ${addedRecruitUrl}`);

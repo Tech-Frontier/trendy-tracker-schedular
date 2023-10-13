@@ -3,14 +3,14 @@ import { ttapi } from './client';
 interface Options {
   url: string;
   company: string;
-  occupation: string;
+  jobCategory: string;
 }
 
-export async function registerRecruit({ company, occupation, url }: Options) {
+export async function registerRecruit({ company, jobCategory, url }: Options) {
   const { data } = await ttapi.post(`/api/recruit/regist`, {
     url,
     company,
-    occupation,
+    jobCategory,
   });
 
   return data.msg;
