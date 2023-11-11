@@ -6,7 +6,10 @@ import metadata from './metadata';
 import { TTAPI } from './ttapi';
 
 (async () => {
+  await TTAPI.healthCheck();
+
   for(const { id, company, jobCategory, name, url, itemSelector, listSelector, hashSelector, waitSelector } of (metadata as any)) {
+
     const recruitList = await TTAPI.fetchRecruitListByCompany({ company });
 
     console.log(`[${name}] 분석 시작`);
