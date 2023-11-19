@@ -27,7 +27,8 @@ import metadata from './metadata';
 
     console.log(`유지된 공고 (총 ${persistentList.length})`);
     for (const persistentRecruitUrl of persistentList) {
-      const options = { hashSelector, id, persistentRecruitUrl, prevRecruitList };
+      const hash = await PUPPETEER.getRecruitHash(persistentRecruitUrl, hashSelector);
+      const options = { hash, id, persistentRecruitUrl, prevRecruitList };
       const { currentHash, prevHash } = await JOBS.modifyUpdatedRecruit(options);
 
       if (prevHash !== currentHash) {

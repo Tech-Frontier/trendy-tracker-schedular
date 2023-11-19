@@ -29,7 +29,10 @@ function listToMap(list: RecruitInfo[]) {
 
 (async () => {
   const jobCategories = ['frontend', 'backend'] as const;
-  const hashSelector = '#career-app-legacy > div > div > div';
+  const HASH_SELECTOR = {
+    'programmers': '#career-app-legacy > div > div > div',
+    'wanted': '#__next div:nth-child(3) > div > div> div',
+  };
 
   for (const jobCategory of jobCategories) {
     const list = await getProgrammersRecruitList({ jobCategory });
@@ -44,7 +47,9 @@ function listToMap(list: RecruitInfo[]) {
 
       console.log(`[${id}] 추가된 공고 (총 ${addedList.length})`);
       for (const addedRecruitUrl of addedList) {
-        const hash = await PUPPETEER.getRecruitHash(addedRecruitUrl, hashSelector);
+        const isWanted = addedRecruitUrl.startsWith('https://www.wanted.co.kr');
+        const hash = await PUPPETEER.getRecruitHash(addedRecruitUrl, HASH_SELECTOR[isWanted ? 'wanted' : 'programmers']);
+
         const { msg } = await JOBS.registerNewRecruit({ addedRecruitUrl, company, hash, id, jobCategory });
 
         console.log(`- ${addedRecruitUrl} [${msg}]`);
@@ -52,7 +57,10 @@ function listToMap(list: RecruitInfo[]) {
 
       console.log(`[${id}] 유지된 공고 (총 ${persistentList.length})`);
       for (const persistentRecruitUrl of persistentList) {
-        const options = { hashSelector, id, persistentRecruitUrl, prevRecruitList };
+        const isWanted = persistentRecruitUrl.startsWith('https://www.wanted.co.kr');
+        const hash = await PUPPETEER.getRecruitHash(persistentRecruitUrl, HASH_SELECTOR[isWanted ? 'wanted' : 'programmers']);
+
+        const options = { hash, id, persistentRecruitUrl, prevRecruitList };
         const { currentHash, prevHash } = await JOBS.modifyUpdatedRecruit(options);
 
         if (prevHash !== currentHash) {
