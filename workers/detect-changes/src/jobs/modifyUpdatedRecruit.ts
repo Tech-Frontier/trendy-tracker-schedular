@@ -1,6 +1,5 @@
+import { STORAGE, RecruitInfo } from '@trendy-tracker-schedular/storage';
 import { PUPPETEER } from '../puppeteer';
-import { STORAGE } from '../storage';
-import { RecruitInfo } from '../storage/getRecruitList';
 
 interface Options {
   id: string;

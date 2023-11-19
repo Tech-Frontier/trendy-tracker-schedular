@@ -1,5 +1,5 @@
+import { STORAGE } from '@trendy-tracker-schedular/storage';
 import { PUPPETEER } from '../puppeteer/index';
-import { STORAGE } from '../storage/index';
 import { compareLists } from '../utils/compareLists';
 
 interface Options {
