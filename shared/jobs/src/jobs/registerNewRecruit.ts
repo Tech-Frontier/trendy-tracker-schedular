@@ -1,6 +1,6 @@
+import { PUPPETEER } from '@trendy-tracker-schedular/puppeteer';
 import { STORAGE } from '@trendy-tracker-schedular/storage';
 import { TTAPI } from '@trendy-tracker-schedular/ttapi';
-import { PUPPETEER } from '../puppeteer/index';
 
 interface Options {
   addedRecruitUrl: string;

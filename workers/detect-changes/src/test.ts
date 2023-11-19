@@ -1,7 +1,7 @@
+import { JOBS } from '@trendy-tracker-schedular/jobs';
 import dotenv from 'dotenv';
 dotenv.config();
 
-import { JOBS } from './jobs/index';
 import metadata from './metadata-test';
 
 (async () => {

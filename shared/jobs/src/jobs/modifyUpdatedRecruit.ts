@@ -1,5 +1,5 @@
+import { PUPPETEER } from '@trendy-tracker-schedular/puppeteer';
 import { STORAGE, RecruitInfo } from '@trendy-tracker-schedular/storage';
-import { PUPPETEER } from '../puppeteer';
 
 interface Options {
   id: string;
