@@ -1,4 +1,4 @@
-import { STORAGE } from '../storage/index';
+import { STORAGE } from '@trendy-tracker-schedular/storage';
 import { Recruit } from '../ttapi/fetchRecruitList';
 import { TTAPI } from '../ttapi/index';
 

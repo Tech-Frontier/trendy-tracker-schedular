@@ -7,3 +7,5 @@ export const STORAGE = {
   deactiveRecruit,
   getRecruitList
 };
+
+export type { RecruitInfo } from './getRecruitList';
