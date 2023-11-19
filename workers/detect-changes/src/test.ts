@@ -1,4 +1,5 @@
 import { JOBS } from '@trendy-tracker-schedular/jobs';
+import { PUPPETEER } from '@trendy-tracker-schedular/puppeteer';
 import dotenv from 'dotenv';
 dotenv.config();
 
@@ -8,7 +9,8 @@ import metadata from './metadata-test';
   for(const { id, name, url, itemSelector, listSelector, waitSelector } of (metadata as any)) {
     console.log(`[${name}] 분석 시작`);
 
-    const { addedList, persistentList, removedList } = await JOBS.findRecruitListAndCompare({ id, itemSelector, listSelector, url, waitSelector });
+    const recruitUrlList = await PUPPETEER.scrapRecruitList({ url, listSelector, itemSelector, waitSelector });
+    const { addedList, persistentList, removedList } = await JOBS.findRecruitListAndCompare({ id, recruitUrlList });
 
     console.log(`추가된 공고 (총 ${addedList.length})`);
     for (const addedRecruitUrl of addedList) {

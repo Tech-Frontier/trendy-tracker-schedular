@@ -1,20 +1,19 @@
-import { PUPPETEER } from '@trendy-tracker-schedular/puppeteer';
 import { STORAGE } from '@trendy-tracker-schedular/storage';
 import { TTAPI } from '@trendy-tracker-schedular/ttapi';
 
 interface Options {
   addedRecruitUrl: string;
   id: string;
-  hashSelector: string;
+  hash: string;
   company: string;
   jobCategory: string;
 }
 
-export async function registerNewRecruit({ addedRecruitUrl, company, hashSelector, id, jobCategory }: Options) {
+export async function registerNewRecruit({ addedRecruitUrl, company, hash, id, jobCategory }: Options) {
   await STORAGE.addRecruit({
     id,
     url: addedRecruitUrl,
-    hash: await PUPPETEER.getRecruitHash(addedRecruitUrl, hashSelector),
+    hash,
     status: 'active'
   });
 

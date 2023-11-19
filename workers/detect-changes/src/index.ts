@@ -1,4 +1,5 @@
 import { JOBS } from '@trendy-tracker-schedular/jobs';
+import { PUPPETEER } from '@trendy-tracker-schedular/puppeteer';
 import { TTAPI } from '@trendy-tracker-schedular/ttapi';
 import dotenv from 'dotenv';
 dotenv.config();
@@ -13,13 +14,13 @@ import metadata from './metadata';
     const recruitList = await TTAPI.fetchRecruitListByCompany({ company });
 
     console.log(`[${name}] 분석 시작`);
-
-    const { prevRecruitList, addedList, persistentList, removedList } = await JOBS.findRecruitListAndCompare({ id, itemSelector, listSelector, url, waitSelector });
+    const recruitUrlList = await PUPPETEER.scrapRecruitList({ url, listSelector, itemSelector, waitSelector });
+    const { prevRecruitList, addedList, persistentList, removedList } = await JOBS.findRecruitListAndCompare({ id, recruitUrlList });
 
     console.log(`추가된 공고 (총 ${addedList.length})`);
     for (const addedRecruitUrl of addedList) {
-      const options = { addedRecruitUrl, company, hashSelector, id, jobCategory };
-      const { msg } = await JOBS.registerNewRecruit(options);
+      const hash = await PUPPETEER.getRecruitHash(addedRecruitUrl, hashSelector);
+      const { msg } = await JOBS.registerNewRecruit({ addedRecruitUrl, company, hash, id, jobCategory });
 
       console.log(`- ${addedRecruitUrl} [${msg}]`);
     }

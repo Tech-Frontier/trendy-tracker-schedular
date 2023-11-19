@@ -36,6 +36,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:workers/detect-changes"\
       },\
       {\
+        "name": "@trendy-tracker-schedular/programmers-changes",\
+        "reference": "workspace:workers/programmers-changes"\
+      },\
+      {\
         "name": "@trendy-tracker-schedular/puppeteer-example",\
         "reference": "workspace:workers/puppeteer-example"\
       }\
@@ -45,6 +49,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     "fallbackExclusionList": [\
       ["@trendy-tracker-schedular/detect-changes", ["workspace:workers/detect-changes"]],\
       ["@trendy-tracker-schedular/jobs", ["workspace:shared/jobs"]],\
+      ["@trendy-tracker-schedular/programmers-changes", ["workspace:workers/programmers-changes"]],\
       ["@trendy-tracker-schedular/puppeteer", ["workspace:shared/puppeteer"]],\
       ["@trendy-tracker-schedular/puppeteer-example", ["workspace:workers/puppeteer-example"]],\
       ["@trendy-tracker-schedular/storage", ["workspace:shared/storage"]],\
@@ -485,6 +490,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@trendy-tracker-schedular/detect-changes", "workspace:workers/detect-changes"],\
             ["@octokit/rest", "npm:20.0.2"],\
             ["@trendy-tracker-schedular/jobs", "workspace:shared/jobs"],\
+            ["@trendy-tracker-schedular/puppeteer", "workspace:shared/puppeteer"],\
             ["@trendy-tracker-schedular/ttapi", "workspace:shared/ttapi"],\
             ["@types/node", "npm:20.3.1"],\
             ["axios", "npm:1.5.1"],\
@@ -514,6 +520,27 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-import-resolver-typescript", "virtual:6fcc5a5d1ee07382fc4b17aa7d8cc74a98b1058f67cb5e08b38d3032185d8897324f774ab575bc13c83fca3546fcf4d212d99905b83b3bb9b2b002e26d2234b6#npm:3.5.0"],\
             ["eslint-plugin-import", "virtual:6fcc5a5d1ee07382fc4b17aa7d8cc74a98b1058f67cb5e08b38d3032185d8897324f774ab575bc13c83fca3546fcf4d212d99905b83b3bb9b2b002e26d2234b6#npm:2.26.0"],\
             ["prettier", "npm:2.8.8"],\
+            ["ts-node", "virtual:6fcc5a5d1ee07382fc4b17aa7d8cc74a98b1058f67cb5e08b38d3032185d8897324f774ab575bc13c83fca3546fcf4d212d99905b83b3bb9b2b002e26d2234b6#npm:10.9.1"],\
+            ["typescript", "patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=289587"]\
+          ],\
+          "linkType": "SOFT"\
+        }]\
+      ]],\
+      ["@trendy-tracker-schedular/programmers-changes", [\
+        ["workspace:workers/programmers-changes", {\
+          "packageLocation": "./workers/programmers-changes/",\
+          "packageDependencies": [\
+            ["@trendy-tracker-schedular/programmers-changes", "workspace:workers/programmers-changes"],\
+            ["@trendy-tracker-schedular/jobs", "workspace:shared/jobs"],\
+            ["@trendy-tracker-schedular/puppeteer", "workspace:shared/puppeteer"],\
+            ["@trendy-tracker-schedular/ttapi", "workspace:shared/ttapi"],\
+            ["@types/node", "npm:20.3.1"],\
+            ["cheerio", "npm:1.0.0-rc.12"],\
+            ["eslint", "npm:8.43.0"],\
+            ["eslint-import-resolver-typescript", "virtual:6fcc5a5d1ee07382fc4b17aa7d8cc74a98b1058f67cb5e08b38d3032185d8897324f774ab575bc13c83fca3546fcf4d212d99905b83b3bb9b2b002e26d2234b6#npm:3.5.0"],\
+            ["eslint-plugin-import", "virtual:6fcc5a5d1ee07382fc4b17aa7d8cc74a98b1058f67cb5e08b38d3032185d8897324f774ab575bc13c83fca3546fcf4d212d99905b83b3bb9b2b002e26d2234b6#npm:2.26.0"],\
+            ["prettier", "npm:2.8.8"],\
+            ["puppeteer", "npm:21.3.8"],\
             ["ts-node", "virtual:6fcc5a5d1ee07382fc4b17aa7d8cc74a98b1058f67cb5e08b38d3032185d8897324f774ab575bc13c83fca3546fcf4d212d99905b83b3bb9b2b002e26d2234b6#npm:10.9.1"],\
             ["typescript", "patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=289587"]\
           ],\
