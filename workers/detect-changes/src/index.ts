@@ -1,9 +1,10 @@
+import { TTAPI } from '@trendy-tracker-schedular/ttapi';
+
 import dotenv from 'dotenv';
 dotenv.config();
 
 import { JOBS } from './jobs/index';
 import metadata from './metadata';
-import { TTAPI } from './ttapi';
 
 (async () => {
   await TTAPI.healthCheck();

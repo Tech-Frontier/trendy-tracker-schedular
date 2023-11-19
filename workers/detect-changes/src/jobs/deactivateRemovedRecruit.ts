@@ -1,6 +1,5 @@
 import { STORAGE } from '@trendy-tracker-schedular/storage';
-import { Recruit } from '../ttapi/fetchRecruitList';
-import { TTAPI } from '../ttapi/index';
+import { TTAPI, Recruit } from '@trendy-tracker-schedular/ttapi';
 
 interface Options {
   removedRecruitUrl: string;

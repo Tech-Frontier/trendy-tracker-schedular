@@ -1,11 +1,11 @@
 {
-  "name": "@trendy-tracker-schedular/detect-changes",
+  "name": "@trendy-tracker-schedular/ttapi",
   "private": true,
   "version": "0.0.0",
+  "main": "./src/index.ts",
   "scripts": {
     "start": "NODE_ENV=production yarn ts-node src/index.ts",
     "dev": "NODE_ENV=development yarn ts-node src/index.ts",
-    "test": "NODE_ENV=development yarn ts-node src/test.ts",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
@@ -18,12 +18,7 @@
     "typescript": "^4.9.5"
   },
   "dependencies": {
-    "@octokit/rest": "^20.0.2",
-    "@trendy-tracker-schedular/storage": "workspace:^",
-    "@trendy-tracker-schedular/ttapi": "workspace:^",
     "axios": "^1.5.1",
-    "cheerio": "^1.0.0-rc.12",
-    "dotenv": "^16.3.1",
-    "puppeteer": "^21.3.8"
+    "dotenv": "^16.3.1"
   }
 }

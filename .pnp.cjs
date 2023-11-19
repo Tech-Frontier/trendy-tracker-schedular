@@ -20,6 +20,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:shared/storage"\
       },\
       {\
+        "name": "@trendy-tracker-schedular/ttapi",\
+        "reference": "workspace:shared/ttapi"\
+      },\
+      {\
         "name": "@trendy-tracker-schedular/detect-changes",\
         "reference": "workspace:workers/detect-changes"\
       },\
@@ -34,6 +38,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ["@trendy-tracker-schedular/detect-changes", ["workspace:workers/detect-changes"]],\
       ["@trendy-tracker-schedular/puppeteer-example", ["workspace:workers/puppeteer-example"]],\
       ["@trendy-tracker-schedular/storage", ["workspace:shared/storage"]],\
+      ["@trendy-tracker-schedular/ttapi", ["workspace:shared/ttapi"]],\
       ["trendy-tracker-schedular", ["workspace:."]]\
     ],\
     "fallbackPool": [\
@@ -470,6 +475,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@trendy-tracker-schedular/detect-changes", "workspace:workers/detect-changes"],\
             ["@octokit/rest", "npm:20.0.2"],\
             ["@trendy-tracker-schedular/storage", "workspace:shared/storage"],\
+            ["@trendy-tracker-schedular/ttapi", "workspace:shared/ttapi"],\
             ["@types/node", "npm:20.3.1"],\
             ["axios", "npm:1.5.1"],\
             ["cheerio", "npm:1.0.0-rc.12"],\
@@ -509,6 +515,24 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@trendy-tracker-schedular/storage", "workspace:shared/storage"],\
             ["@octokit/rest", "npm:20.0.2"],\
             ["@types/node", "npm:20.3.1"],\
+            ["eslint", "npm:8.43.0"],\
+            ["eslint-import-resolver-typescript", "virtual:5c12b0c6277b6178f2c5fa007518243ecb3de336c75435357f776048f43968756bbd8cbd38f4a7c66e2d3481778353b11592f4f14267a2e7eeb6b2449a57e565#npm:3.5.0"],\
+            ["eslint-plugin-import", "virtual:5c12b0c6277b6178f2c5fa007518243ecb3de336c75435357f776048f43968756bbd8cbd38f4a7c66e2d3481778353b11592f4f14267a2e7eeb6b2449a57e565#npm:2.26.0"],\
+            ["prettier", "npm:2.8.8"],\
+            ["ts-node", "virtual:5c12b0c6277b6178f2c5fa007518243ecb3de336c75435357f776048f43968756bbd8cbd38f4a7c66e2d3481778353b11592f4f14267a2e7eeb6b2449a57e565#npm:10.9.1"],\
+            ["typescript", "patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=289587"]\
+          ],\
+          "linkType": "SOFT"\
+        }]\
+      ]],\
+      ["@trendy-tracker-schedular/ttapi", [\
+        ["workspace:shared/ttapi", {\
+          "packageLocation": "./shared/ttapi/",\
+          "packageDependencies": [\
+            ["@trendy-tracker-schedular/ttapi", "workspace:shared/ttapi"],\
+            ["@types/node", "npm:20.3.1"],\
+            ["axios", "npm:1.5.1"],\
+            ["dotenv", "npm:16.3.1"],\
             ["eslint", "npm:8.43.0"],\
             ["eslint-import-resolver-typescript", "virtual:5c12b0c6277b6178f2c5fa007518243ecb3de336c75435357f776048f43968756bbd8cbd38f4a7c66e2d3481778353b11592f4f14267a2e7eeb6b2449a57e565#npm:3.5.0"],\
             ["eslint-plugin-import", "virtual:5c12b0c6277b6178f2c5fa007518243ecb3de336c75435357f776048f43968756bbd8cbd38f4a7c66e2d3481778353b11592f4f14267a2e7eeb6b2449a57e565#npm:2.26.0"],\
