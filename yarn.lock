@@ -330,6 +330,7 @@ __metadata:
   resolution: "@trendy-tracker-schedular/detect-changes@workspace:workers/detect-changes"
   dependencies:
     "@octokit/rest": ^20.0.2
+    "@trendy-tracker-schedular/storage": "workspace:^"
     "@types/node": ^20.3.1
     axios: ^1.5.1
     cheerio: ^1.0.0-rc.12
@@ -354,6 +355,21 @@ __metadata:
     eslint-plugin-import: ^2.23.3
     prettier: ^2.8.8
     puppeteer: ^21.3.8
+    ts-node: ^10.9.1
+    typescript: ^4.9.5
+  languageName: unknown
+  linkType: soft
+
+"@trendy-tracker-schedular/storage@workspace:^, @trendy-tracker-schedular/storage@workspace:shared/storage":
+  version: 0.0.0-use.local
+  resolution: "@trendy-tracker-schedular/storage@workspace:shared/storage"
+  dependencies:
+    "@octokit/rest": ^20.0.2
+    "@types/node": ^20.3.1
+    eslint: ^8.43.0
+    eslint-import-resolver-typescript: ^3.5.3
+    eslint-plugin-import: ^2.23.3
+    prettier: ^2.8.8
     ts-node: ^10.9.1
     typescript: ^4.9.5
   languageName: unknown
