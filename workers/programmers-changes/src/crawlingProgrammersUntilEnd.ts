@@ -49,6 +49,9 @@ async function crawlingProgrammers({ jobCategory, listUrl }: { jobCategory: stri
   const page = await browser.newPage();
 
   await page.goto(listUrl);
+
+  page.waitForSelector('.list-positions-header');
+
   const listSelector = '.list-positions';
   const itemSelector = 'li.list-position-item';
 
