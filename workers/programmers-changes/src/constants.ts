@@ -1,5 +1,5 @@
 const TODAY = new Date().getTime();
-const START = new Date('2023-11-18').getTime();
+const START = new Date('2023-11-23').getTime();
 const DAYS = (TODAY - START) / (1000*60*60*24);
 
 export const MAX_PAGE = Math.min(

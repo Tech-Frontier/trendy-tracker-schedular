@@ -35,7 +35,7 @@ export async function crawlingProgrammersUntilEnd({
     pageNo++;
 
     if (pageNo > maxPage) {
-      console.log(`수집 최대 페이지인 100페이지까지 도달하여 중단합니다.`);
+      console.log(`수집 최대 페이지인 ${maxPage} 페이지까지 도달하여 중단합니다.`);
       break;
     }
   }

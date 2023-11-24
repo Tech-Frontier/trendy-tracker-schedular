@@ -9,9 +9,13 @@ export async function getRecruitHash(url: string, hashSelector = 'html') {
 
   await page.goto(url);
 
+  console.log(`[retryWaitForSelector] start`);
   await retryWaitForSelector(page, hashSelector);
+  console.log(`[retryWaitForSelector] end`);
 
+  console.log(`[page.$eval(hashSelector)] start`);
   const html = await page.$eval(hashSelector, el => el.outerHTML);
+  console.log(`[page.$eval(hashSelector)] end`);
 
   const hash = crypto.createHash('md5').update(html).digest('hex');
 
