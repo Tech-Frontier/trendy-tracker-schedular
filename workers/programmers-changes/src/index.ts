@@ -31,7 +31,7 @@ function listToMap(list: RecruitInfo[]) {
   const jobCategories = ['frontend', 'backend'] as const;
   const HASH_SELECTOR = {
     'programmers': '#career-app-legacy > div > div > div',
-    'wanted': '#__next div:nth-child(3) > div > div> div',
+    'wanted': '#__next div:nth-child(3) > div > div> div:nth-child(1)',
   };
 
   for (const jobCategory of jobCategories) {

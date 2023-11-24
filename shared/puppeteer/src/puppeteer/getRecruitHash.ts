@@ -5,6 +5,8 @@ export async function getRecruitHash(url: string, hashSelector = 'html') {
   const browser = await puppeteer.launch({ headless: 'new' });
   const page = await browser.newPage();
 
+  await page.setUserAgent("Chrome");
+
   await page.goto(url);
 
   await retryWaitForSelector(page, hashSelector);
