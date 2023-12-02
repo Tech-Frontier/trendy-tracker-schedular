@@ -20,7 +20,7 @@ name: programmer-changes
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '0 7 * * *'
 
 jobs:
   detect_changes:
