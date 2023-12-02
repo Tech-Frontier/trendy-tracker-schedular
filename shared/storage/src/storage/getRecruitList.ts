@@ -24,6 +24,8 @@ export async function getRecruitList({ id }: GetRecruitListOptions): Promise<Get
   const response = await findFile({ path: filename }, context);
 
   if (response == null) {
+    await new Promise((r) => setTimeout(r, 500));
+
     const response = await createOrUpdateFile({
       path: filename,
       content: Buffer.from(`[]`).toString('base64'),
